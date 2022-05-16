@@ -9,12 +9,12 @@ const nextBtn = document.querySelector('.next-btn');
 
   function translateCarousel(direction){
     if(direction === 1) {
-        selectedBtn = 'prev'
+        selectedBtn = 'prev-btn'
         carousel.style.transitionDuration = '0.5s';
         carousel.style.transform = `rotateY(60deg)`;
         carousel.ontransitionend = () => reorganizeEl(selectedBtn);
     }else {
-       selectedBtn = 'next'
+       selectedBtn = 'next-btn'
         carousel.style.transitionDuration = '0.5s';
         carousel.style.transform = `rotateY(-60deg)`;
         carousel.ontransitionend = () => reorganizeEl(selectedBtn);
@@ -23,7 +23,7 @@ const nextBtn = document.querySelector('.next-btn');
   
   function reorganizeEl(selectedBtn) {
     carousel.removeAttribute('style');
-    if(selectedBtn === 'prev') {
+    if(selectedBtn === 'prev-btn') {
       carousel.insertBefore(carousel.lastElementChild,carousel.firstElementChild)
     }else {
       carousel.appendChild(carousel.firstElementChild);
